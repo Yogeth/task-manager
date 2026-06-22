@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
-import ListofTasks from "./ListofTasks";
-import SearchBar from "./searchBar";
+import ListofTasks from "./ListofTasks.jsx";
+import SearchBar from "./SearchBar.jsx";
 
-function App() {
+export default function App() {
   const [inputValue, setInputValue] = useState("");
-  const [ListofTaskss, setListofTaskss] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [currentIndex,setCurrentIndex] = useState(null);
 
   useEffect(() => {
-    console.log(ListofTaskss);
-  }, [ListofTaskss]);
+    console.log(tasks);
+  }, [tasks]);
+
   return (
     <div className="bg-red-300 flex justify-center items-center h-screen ">
       <div className="bg-blue-400 p-8">
@@ -16,15 +18,15 @@ function App() {
         <SearchBar
           inputValue={inputValue}
           setInputValue={setInputValue}
-          setListofTaskss={setListofTaskss}
+          setTasks={setTasks}
         />
         <ListofTasks
-          ListofTaskss={ListofTaskss}
-          setListofTaskss={setListofTaskss}
+          tasks={tasks}
+          setTasks={setTasks}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
         />
       </div>
     </div>
   );
 }
-
-export default App;

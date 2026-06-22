@@ -1,8 +1,8 @@
-function SearchBar({inputValue, setInputValue,setListofTaskss}) {
+function SearchBar({inputValue, setInputValue,setTasks}) {
   const handleClick = () => {
     if(inputValue.length>0)
     {
-    setListofTaskss(prevList => [...prevList, inputValue]);
+    setTasks(prevList => [...prevList, {id:Math.random(),taskname:inputValue,strike:false}]);
     setInputValue("");
     }
   }
