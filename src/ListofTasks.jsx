@@ -34,14 +34,14 @@ export default function ListofTasks({ tasks, setTasks }) {
               </p>
               <section className="flex gap-1">
                 <img
-                  src="/public/check-svgrepo-com.svg"
+                  src="/check-svgrepo-com.svg"
                   alt="checked"
                   className="h-6 w-6 border cursor-pointer bg-amber-600 hover:bg-amber-700"
                   onClick={() => handleStrike(task)}
                 />
                 <img
                   className="h-6 w-6 border cursor-pointer bg-amber-600 hover:bg-amber-700"
-                  src="/public/bin-svgrepo-com.svg" 
+                  src="/bin-svgrepo-com.svg" 
                   alt="remove"
                   onClick={() => handleClick(task)}
                 />
