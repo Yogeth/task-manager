@@ -25,7 +25,7 @@ function SearchBar({ inputValue, setInputValue, setTasks }) {
       <button onClick={handleClick}>
         <img
           className="h-5 w-5"
-          src="src/assets/content-tag-add-icon-svgrepo-com.svg" 
+          src="/public/content-tag-add-icon-svgrepo-com.svg" 
           alt="add"
         />
       </button>
