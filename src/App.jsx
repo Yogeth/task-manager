@@ -4,27 +4,34 @@ import SearchBar from "./SearchBar.jsx";
 
 export default function App() {
   const [inputValue, setInputValue] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const [currentIndex,setCurrentIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [strike, setStrike] = useState(false);
+
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("taskManager");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
 
   useEffect(() => {
-    console.log(tasks);
+    localStorage.setItem("taskManager", JSON.stringify(tasks));
   }, [tasks]);
 
   return (
-    <div className="bg-red-300 flex justify-center items-center h-screen ">
-      <div className="bg-blue-400 p-8">
+    <div className="flex justify-center items-center h-screen bg-zinc-100 ">
+      <div className="bg-stone-200 p-8 rounded-xl">
         <p className="font-semibold text-xl text-center">Task Manager</p>
         <SearchBar
           inputValue={inputValue}
           setInputValue={setInputValue}
           setTasks={setTasks}
+          tasks={tasks}
         />
+
         <ListofTasks
           tasks={tasks}
           setTasks={setTasks}
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
+          strike={strike}
+          setStrike={setStrike}
         />
       </div>
     </div>
