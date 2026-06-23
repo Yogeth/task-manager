@@ -25,7 +25,7 @@ A simple and responsive Task Manager application built with React and Vite. This
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/task-manager.git
+https://github.com/Yogeth/task-manager.git
 ```
 
 2. Navigate to the project directory:
